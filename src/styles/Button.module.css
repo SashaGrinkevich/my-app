@@ -1,0 +1,27 @@
+.button {
+    display: flex;
+    text-align: center;
+    border: none;
+    color: gray;
+
+}
+
+.button:hover {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.primary {
+    color: black;
+}
+
+.secondary {
+    color: white;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
