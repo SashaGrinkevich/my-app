@@ -2,7 +2,6 @@ import { instance } from "./env";
 
 
 export interface User {
-    user(user: any): { payload: User[]; type: "users/setUsers"; };
     userId: any;
     login: string;
     id: number | string;
@@ -11,8 +10,8 @@ export interface User {
     gravatar_id: string;
     url: string;
     html_url: string;
-    followers_url: string;
-    following_url: string;
+    followers: string;
+    following: string;
     gists_url: string;
     starred_url: string;
     subscriptions_url: string;
@@ -21,18 +20,14 @@ export interface User {
     events_url: string;
     received_events_url: string;
     type: string;
-    site_admin: boolean;
-   
+    site_admin: boolean; 
 }
 
 type GetUserParams = { name: User['id'] };
 
 type GetuserSuccessResponse = User;
 
-export const getUser = ({
-    name,
-}: GetUserParams) :Promise<GetuserSuccessResponse> =>{
-    return instance
-    .get(`/users/${name}`)
-    .then((res)=>res.data)
+export const getUser = async ({ name }: GetUserParams): Promise<GetuserSuccessResponse>  =>{
+    const response = await instance.get(`/users/${name}`)
+    return response.data 
 }

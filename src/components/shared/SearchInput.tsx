@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from "../../styles/SearchInput.module.css";
 import Button from "./Button";
-import { setSearch } from "../../store/user.reducer";
 import { AppDispatch } from "../../store";
 import { useDispatch } from "react-redux";
+import { getUserThunk } from "../../store/user.actions";
 
 const SearchInput: React.FC = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -11,12 +11,10 @@ const SearchInput: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
-    console.log(searchValue)
   };
 
   const handleClick = () => {
-    dispatch(setSearch(searchValue));
-    console.log(searchValue);
+    dispatch(getUserThunk(searchValue));
   };
 
   return (

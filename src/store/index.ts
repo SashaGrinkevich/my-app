@@ -3,8 +3,14 @@ import userReducer from "./user.reducer";
 
 export const store = configureStore({
     reducer:{
-        users: userReducer
+        user: userReducer 
     },
+    middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: ['users/userReducer'],
+      }
+    })
 });
 
 export type RootState = ReturnType<typeof store.getState>

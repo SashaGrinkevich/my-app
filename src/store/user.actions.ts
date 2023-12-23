@@ -1,47 +1,27 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { User, getUser } from "../api/getUser";
-import { getUsers } from "../api/getUsers";
 import { RootState } from ".";
 import { getSlice } from "./user.selectors";
-import { getSearchUsers } from "../api/getSearchUser";
-// import { getSearchUsers } from "../api/getSearchUser";
+import { getRepos } from "../api/getRepos";
 
 export const getUserThunk = createAsyncThunk(
     "users/getUserThunk",
-    (name: User["id"]) => {
+    (name: User["id"], { rejectWithValue }) => {
+      try{
     return getUser({ name })
+    } catch (error) {
+      return rejectWithValue(error)
     }
+  }
   );
 
-  // type GetUsersParams = {
-  //   search: string;
-  //   page: string;
-  //   repos:string;
-  //   pageLimit:string;
-  //   name:string;
-  // };
-  export const getUsersThunk = createAsyncThunk(
-    "users/getUsers",
+  export const getReposThunk = createAsyncThunk(
+    "users/getReposThunk",
     async (param, thunkApi) => {
       const { getState } = thunkApi;
-      const { page,repos,pageLimit,name} = getSlice(getState() as RootState);
-      return getUsers({
-        page,pageLimit,name,repos,
-      });
-    }
-  )
-
-  // type GetUsersSearchParams = {
-  //   search: string;
-  //   page: string;
-  // };
-  export const getSearchUsersThunk = createAsyncThunk(
-    "users/getSearchUsers",
-    async (param, thunkApi) => {
-      const { getState } = thunkApi;
-      const { page,search } = getSlice(getState() as RootState);
+      const { page, name, pageLimit } = getSlice(getState() as RootState);
   
-      return getSearchUsers({ page, search});
+      return getRepos({ page, name, pageLimit});
     }
   )
 
