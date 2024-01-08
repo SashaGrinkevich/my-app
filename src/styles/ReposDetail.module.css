@@ -1,0 +1,16 @@
+.repoInfo {
+    height: 100px;
+    background-color: #f3f2f2;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.repoSubtitle {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.repoText {
+    font-size: 15px;
+    font-weight: bold;
+}
