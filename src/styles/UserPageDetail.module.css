@@ -1,0 +1,45 @@
+.pageWrapper {
+    display: flex;
+    justify-content: space-around;
+    margin: 35px;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 300px;
+}
+
+.nickName {
+    margin-top: 20px;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.name {
+    margin-top: 20px;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.followInfo {
+    margin-top: 20px;
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+    font-family: cursive;
+}
+
+.icon {
+    margin-right: 6px;
+}
+
+.repoInfo {
+    width: 1000px;
+    list-style-type: none;
+    margin: 10px 0;
+    font-family: cursive;
+    font-size: 20px;
+
+}

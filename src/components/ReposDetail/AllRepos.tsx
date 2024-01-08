@@ -2,17 +2,17 @@ import React from "react";
 import { Repositories } from "../../api/Repos";
 import ReposDetail from "./ReposDetail";
 
-interface AllReposProps {
+type AllReposProps = {
   repos: Repositories[];
 }
 
-const AllRepo: React.FC<AllReposProps> = ({ repos }) => {
+const AllRepo  = ({ repos }: AllReposProps) => {
   return (
     <>
       <ul>
         {repos.map((repo) => (
           <li key={repo.name}>
-            <ReposDetail repo={repo}/>
+            <ReposDetail repos={repo}/>
           </li>
         ))}
       </ul>

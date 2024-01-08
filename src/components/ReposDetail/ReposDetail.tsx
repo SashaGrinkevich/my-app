@@ -2,31 +2,24 @@ import { Repositories } from "../../api/Repos";
 import styles from "../../styles/ReposDetail.module.css";
 import Typography from "../shared/Typography";
 
-interface ReposDetailProps {
-  repo: Repositories;
+type ReposDetailProps = {
+  repos: Repositories;
 }
 
-export const ReposDetailPage: React.FC<ReposDetailProps> = ({ repo }) => {
+export const ReposDetailPage: React.FC<ReposDetailProps> = ({repos}) => {
   return (
     <>
       <div className={styles.repoInfo}>
-        <Typography
-          variant="p"
-          color="primary"
-          className={styles.repoTitle}
-        >
-          {`Repositories: ${repo.count}`}
-        </Typography>
         <div className={styles.repoDescription}>
           <Typography
             variant="p"
             color="primary"
             className={styles.repoSubtitle}
           >
-            {repo.full_name}
+            <a href={repos.html_url} target="_blank" rel="noreferrer">{repos.name}</a>
           </Typography>
           <Typography variant="p" color="primary" className={styles.repoText}>
-            {repo.description}
+            {repos.description}
           </Typography>
         </div>
       </div>

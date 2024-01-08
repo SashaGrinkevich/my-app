@@ -2,10 +2,13 @@
   margin: 0;
   box-sizing: border-box;
   padding: 0;
+  text-decoration: none;
 }
+
 .primary {
-color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.8);
 }
-.secondary{
+
+.secondary {
   color: rgba(34, 138, 230, 0.8);
 }

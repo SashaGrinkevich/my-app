@@ -1,3 +1,3 @@
 import { RootState } from ".";
 
-export const getSlice = (state: RootState) => state.user
+export const getUserSlice = (state: RootState) => state.user

@@ -2,12 +2,16 @@ import React from "react";
 
 import { ReactComponent as GitHub } from "../assets/icon/Icons/GitHub.svg";
 import { ReactComponent as Search } from "../assets/icon/Icons/Search.svg";
-
+import { ReactComponent as Followers } from "../assets/icon/Icons/users.svg"
+import { ReactComponent as Following } from "../assets/icon/Icons/user.svg"
 
 const icons = {
 
   github: GitHub,
   search: Search,
+  followers: Followers,
+  following: Following,
+  
 
 };
 

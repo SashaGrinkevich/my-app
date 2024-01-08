@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../styles/SearchInput.module.css";
 import Button from "./Button";
 import { AppDispatch } from "../../store";
 import { useDispatch } from "react-redux";
-import { getUserThunk } from "../../store/user.actions";
+import { getReposThunk, getUserThunk } from "../../api/getUsersInfo";
+
+
+
 
 const SearchInput: React.FC = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -15,6 +18,7 @@ const SearchInput: React.FC = () => {
 
   const handleClick = () => {
     dispatch(getUserThunk(searchValue));
+    dispatch(getReposThunk(searchValue));
   };
 
   return (
