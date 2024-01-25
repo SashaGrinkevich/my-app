@@ -1,6 +1,9 @@
 .inputSearch {
-    padding: 5px 10px;
-    width: 350px;
+    padding: 10px 40px;
+    width: 500px;
+    position: absolute;
+    font-size: 15px;
+
 }
 
 .search {
@@ -8,7 +11,10 @@
     align-items: center;
 }
 
-.searchButton {
-    padding: 6px 0;
-    border-radius: 2px;
+.searchIcon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 1px;
+    left: 7px;
 }

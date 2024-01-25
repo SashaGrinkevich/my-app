@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-around;
     margin: 35px;
+    flex-wrap: wrap;
 }
 
 .avatar {
@@ -42,4 +43,15 @@
     font-family: cursive;
     font-size: 20px;
 
+}
+.repo{
+    display: flex;
+    flex-direction: column;
+}
+.pagination{
+    display: flex;
+}
+.paginateBtn{
+    font-size: 15px;
+ /* color: lightgray; */
 }

@@ -1,9 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-
 import styles from "../../styles/Button.module.css";
-
-
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   color?: "primary"  | "secondary";

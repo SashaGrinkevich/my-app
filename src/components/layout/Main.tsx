@@ -1,10 +1,11 @@
 import UserPageDetail from "../UserPageDetail/UserPageDetail";
+import StartText from "../StartText";
+import { getUserSlice } from "../../store/user.selectors";
+import { useSelector } from "react-redux";
 
 const Main: React.FC = () => {
-  return (
-    <>
-      <UserPageDetail />
-    </>
-  );
+  const { user, repos } = useSelector(getUserSlice);
+
+  return <>{repos.length === 0 ? (<StartText />) : (<UserPageDetail />)}</>;
 };
 export default Main;
