@@ -4,6 +4,9 @@ import { useAppSelector } from "../../hooks/useAppSelector";
 import Icon from "../../assets/Icon";
 import { getUserSlice } from "../../store/user.selectors";
 import ReposDetail from "../ReposDetail/ReposDetail";
+import { useState } from "react";
+import Button from "../shared/Button";
+import Pagination from "../Pogination";
 
 const UserPageDetail: React.FC = () => {
   const {
@@ -11,6 +14,13 @@ const UserPageDetail: React.FC = () => {
     isUserPageLoading: loading,
     repos,
   } = useAppSelector(getUserSlice);
+  const itemsPerPage = 4;
+  const pageCount = Math.ceil(repos.length / itemsPerPage);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handlePageChange = (page: number) => {setCurrentPage(page)};
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const repo = repos.slice(startIndex, startIndex + itemsPerPage);
 
   return (
     <div>
@@ -50,13 +60,9 @@ const UserPageDetail: React.FC = () => {
               </Typography>
             </div>
           </div>
-          <ul className={styles.repoInfo}>
-            {repos.map((repo) => (
-              <li key={repo.name}>
-                <ReposDetail repos={repo} />
-              </li>
-            ))}
-          </ul>
+          <div>
+            <Pagination/>
+          </div>
         </div>
       )}
     </div>
