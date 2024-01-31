@@ -3,25 +3,11 @@ import styles from "../../styles/UserPageDetail.module.css";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import Icon from "../../assets/Icon";
 import { getUserSlice } from "../../store/user.selectors";
-import ReposDetail from "../ReposDetail/ReposDetail";
-import { useState } from "react";
-import Button from "../shared/Button";
 import Pagination from "../Pogination";
 
 const UserPageDetail: React.FC = () => {
-  const {
-    user,
-    isUserPageLoading: loading,
-    repos,
-  } = useAppSelector(getUserSlice);
-  const itemsPerPage = 4;
-  const pageCount = Math.ceil(repos.length / itemsPerPage);
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const handlePageChange = (page: number) => {setCurrentPage(page)};
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const repo = repos.slice(startIndex, startIndex + itemsPerPage);
-
+  const { user, isUserPageLoading: loading } = useAppSelector(getUserSlice);
+ 
   return (
     <div>
       {loading && "Loading"}
@@ -60,9 +46,7 @@ const UserPageDetail: React.FC = () => {
               </Typography>
             </div>
           </div>
-          <div>
             <Pagination/>
-          </div>
         </div>
       )}
     </div>

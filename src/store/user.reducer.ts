@@ -23,8 +23,6 @@ const initialState: UserState = {
   name: "",
   currentPage: 1,
   page:1,
- 
-
 };
 
 const usersSlice = createSlice({

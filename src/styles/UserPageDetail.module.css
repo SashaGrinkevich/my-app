@@ -35,23 +35,3 @@
 .icon {
     margin-right: 6px;
 }
-
-.repoInfo {
-    width: 1000px;
-    list-style-type: none;
-    margin: 10px 0;
-    font-family: cursive;
-    font-size: 20px;
-
-}
-.repo{
-    display: flex;
-    flex-direction: column;
-}
-.pagination{
-    display: flex;
-}
-.paginateBtn{
-    font-size: 15px;
- /* color: lightgray; */
-}
