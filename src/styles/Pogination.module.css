@@ -1,0 +1,44 @@
+
+.repoInfo {
+    width: 1000px;
+    list-style-type: none;
+    margin: 10px 0;
+    font-family: cursive;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+.allReposCount{
+    color: rgb(126, 128, 128);
+    font-family: cursive;
+    font-size: 30px;
+
+}
+.repo {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.paginateBtn {
+    color: rgb(126, 128, 128);
+    font-size: 15px; 
+    justify-content: center;
+}
+.paginateBtn:hover{
+    color: lightgray;
+    transition: 0.3ms;
+}
+.paginateBtn:active{
+   color: black;
+    transition: 0.3ms;
+}
+.arrow{
+    width: 20px;
+    height: 20px;
+}

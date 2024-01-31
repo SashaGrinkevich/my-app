@@ -19,10 +19,11 @@ export const getReposThunk = createAsyncThunk(
   "repos/getReposThunk",
    async (name:string, thunkAPI) => {
     try {
-      const response = await instance.get<Repositories[]>(`/${name}/repos`, {});
+      const response = await instance.get<Repositories[]>(`/${name}/repos`);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
+      
     }
   }
 );

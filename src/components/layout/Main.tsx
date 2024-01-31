@@ -4,7 +4,7 @@ import { getUserSlice } from "../../store/user.selectors";
 import { useSelector } from "react-redux";
 
 const Main: React.FC = () => {
-  const { user, repos } = useSelector(getUserSlice);
+  const {  repos } = useSelector(getUserSlice);
 
   return <>{repos.length === 0 ? (<StartText />) : (<UserPageDetail />)}</>;
 };
